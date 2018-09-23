@@ -7,7 +7,7 @@
 <ion-slide-box auto-play ="true" does-continue="true" show-pager="true"  >
 
 	<!-- width: 100% height 50% to fill the slidder image according to the layout -->
-   <ion-slide class="swiper-slide swiper-slide-active" style="width:100%; height: 50%; "  ng-repeat="slide in slide_items" >
+   <ion-slide class="swiper-slide swiper-slide-active" style="width:100%; display:none; height: 50%; "  ng-repeat="slide in slide_items" >
       <div>
          <img  ng-src="{{'img/'+ slide.p_image_id +'.jpg'}}"  ng-click="showProductInfo(slide.p_id,slide.p_description,slide.p_image_id,slide.p_name,slide.p_price)" >
       </div>
@@ -29,7 +29,8 @@
 				</p>
                 
 				<h2  ng-click="showProductInfo(item.p_id,item.p_description,item.p_image_id,item.p_name,item.p_price)" > {{item.p_name}} </h2>
-                <p   ng-click="showProductInfo(item.p_id,item.p_description,item.p_image_id,item.p_name,item.p_price)">Price: &#8377; {{item.p_price}}</p>
+                <p   ng-click="showProductInfo(item.p_id,item.p_description,item.p_image_id,item.p_name,item.p_price)">Php {{item.p_price}}
+             <p ng-click="showProductInfo(item.p_id,item.p_description,item.p_image_id,item.p_name,item.p_price)"><button class="button button-stable button-clear button-block button-small">{{item.cart_item_qty}}</button></p>
 			</ion-item>
 			
             

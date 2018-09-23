@@ -7,23 +7,49 @@
 // 'starter.controllers' is found in controllers.js
 
 
-angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.services', 'app.directives'  ])
+angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.services', 'app.directives'])
 
-.run(function($ionicPlatform) {
-  $ionicPlatform.ready(function() {
-    // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
-    // for form inputs)
-    if(window.cordova && window.cordova.plugins.Keyboard) {
-      cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
-    }
-    if(window.StatusBar) {
-      // org.apache.cordova.statusbar required
-      StatusBar.styleDefault();
-    }
-  });
-  
+  .run(function ($ionicPlatform) {
+    $ionicPlatform.ready(function () {
+      // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
+      // for form inputs)
+      if (window.cordova && window.cordova.plugins.Keyboard) {
+        cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+      }
+      if (window.StatusBar) {
+        // org.apache.cordova.statusbar required
+        StatusBar.styleDefault();
+      }
+      // set to either landscape
+      screen.orientation.lock('portrait');
+
+      // allow user rotate
+     // screen.orientation.unlock();
+
+      /*window.addEventListener("orientationchange", function () {
+        console.log(screen.orientation.type); // e.g. portrait*/
+      });
+
+      /*
+document.addEventListener("offline", onOffline, false);
+
+function onOffline() {
+   var stat = document.getElementById("stat");
+   stat.innerHTML("<div class='appstatus'>Offline</div>")
+}
+
+
+document.addEventListener("online", onOnline, false);
+
+function onOnline() {
+   var stat = document.getElementById("stat");
+   stat.innerHTML("<div class='appstatus'>Online</div>")
+}
+
+    });
+
+*/
 
 
 
-  
-})
+  })

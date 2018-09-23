@@ -1,0 +1,10 @@
+.bar.bar-positive {
+    border-color: #fff;
+    background-color: #fff;
+    background-image: linear-gradient(0deg, #fff, #eee 50%, transparent 50%);
+    color: #333 !important;
+}
+
+.header-item a {
+    color: #333 !important;
+}
