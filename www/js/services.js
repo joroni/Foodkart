@@ -68,7 +68,7 @@ angular.module('app.services', [])
 }])
 
 .factory('sharedFilterService', [function(){
-//http://18.136.90.17/
+//http://18.136.90.1s7ss/
 	var obj = {};
     obj.str = "http://18.136.90.17/foodkart/api/food_menu.php?till=";
 	obj.sort = "";

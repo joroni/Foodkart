@@ -60,11 +60,11 @@ angular.module('app.controllers', [])
 	
 	 //show product page
 	$scope.showProductInfo=function (id,desc,img,name,price) {	 
-		 sessionStorage.setItem('product_info_id', id);
-		 sessionStorage.setItem('product_info_desc', desc);
-		 sessionStorage.setItem('product_info_img', img);
-		 sessionStorage.setItem('product_info_name', name);
-		 sessionStorage.setItem('product_info_price', price);
+		 localStorage.setItem('product_info_id', id);
+		 localStorage.setItem('product_info_desc', desc);
+		 localStorage.setItem('product_info_img', img);
+		 localStorage.setItem('product_info_name', name);
+		 localStorage.setItem('product_info_price', price);
 		 window.location.href = "#/page13";
 	 };
 
@@ -119,13 +119,13 @@ angular.module('app.controllers', [])
    
 .controller('checkOutCtrl', function($scope) {
 	$scope.loggedin=function(){
-		if(sessionStorage.getItem('loggedin_id')==null){return 1;}
+		if(localStorage.getItem('loggedin_id')==null){return 1;}
 		else{
-			$scope.loggedin_name= sessionStorage.getItem('loggedin_name');
-			$scope.loggedin_id= sessionStorage.getItem('loggedin_id');
-			$scope.loggedin_phone= sessionStorage.getItem('loggedin_phone');
-			$scope.loggedin_address= sessionStorage.getItem('loggedin_address');
-			$scope.loggedin_pincode= sessionStorage.getItem('loggedin_pincode');
+			$scope.loggedin_name= localStorage.getItem('loggedin_name');
+			$scope.loggedin_id= localStorage.getItem('loggedin_id');
+			$scope.loggedin_phone= localStorage.getItem('loggedin_phone');
+			$scope.loggedin_address= localStorage.getItem('loggedin_address');
+			$scope.loggedin_pincode= localStorage.getItem('loggedin_pincode');
 			return 0;
 		}
 	};
@@ -150,11 +150,11 @@ angular.module('app.controllers', [])
 			$http.get(str)
 			.success(function (response){
 				$scope.user_details = response.records;
-				sessionStorage.setItem('loggedin_name', $scope.user_details.u_name);
-				sessionStorage.setItem('loggedin_id', $scope.user_details.u_id );
-				sessionStorage.setItem('loggedin_phone', $scope.user_details.u_phone);
-				sessionStorage.setItem('loggedin_address', $scope.user_details.u_address);
-				sessionStorage.setItem('loggedin_pincode', $scope.user_details.u_pincode);
+				localStorage.setItem('loggedin_name', $scope.user_details.u_name);
+				localStorage.setItem('loggedin_id', $scope.user_details.u_id );
+				localStorage.setItem('loggedin_phone', $scope.user_details.u_phone);
+				localStorage.setItem('loggedin_address', $scope.user_details.u_address);
+				localStorage.setItem('loggedin_pincode', $scope.user_details.u_pincode);
 				
 				$ionicHistory.nextViewOptions({
 					disableAnimate: true,
@@ -255,21 +255,21 @@ angular.module('app.controllers', [])
    
 .controller('profileCtrl', function($scope,$rootScope,$ionicHistory,$state) {
 
-		$scope.loggedin_name= sessionStorage.getItem('loggedin_name');
-		$scope.loggedin_id= sessionStorage.getItem('loggedin_id');
-		$scope.loggedin_phone= sessionStorage.getItem('loggedin_phone');
-		$scope.loggedin_address= sessionStorage.getItem('loggedin_address');
-		$scope.loggedin_pincode= sessionStorage.getItem('loggedin_pincode');
+		$scope.loggedin_name= localStorage.getItem('loggedin_name');
+		$scope.loggedin_id= localStorage.getItem('loggedin_id');
+		$scope.loggedin_phone= localStorage.getItem('loggedin_phone');
+		$scope.loggedin_address= localStorage.getItem('loggedin_address');
+		$scope.loggedin_pincode= localStorage.getItem('loggedin_pincode');
 		
 		
 		$scope.logout=function(){
-				delete sessionStorage.loggedin_name;
-				delete sessionStorage.loggedin_id;
-				delete sessionStorage.loggedin_phone;
-				delete sessionStorage.loggedin_address;
-				delete sessionStorage.loggedin_pincode;
+				delete localStorage.loggedin_name;
+				delete localStorage.loggedin_id;
+				delete localStorage.loggedin_phone;
+				delete localStorage.loggedin_address;
+				delete localStorage.loggedin_pincode;
 				
-				console.log('Logoutctrl',sessionStorage.getItem('loggedin_id'));
+				console.log('Logoutctrl',localStorage.getItem('loggedin_id'));
 				
 				$ionicHistory.nextViewOptions({
 					disableAnimate: true,
@@ -295,11 +295,11 @@ angular.module('app.controllers', [])
 
 	//onload event
 	angular.element(document).ready(function () {
-		$scope.id= sessionStorage.getItem('product_info_id');
-		$scope.desc= sessionStorage.getItem('product_info_desc');
-		$scope.img= "img/"+ sessionStorage.getItem('product_info_img')+".jpg";
-		$scope.name= sessionStorage.getItem('product_info_name');
-		$scope.price= sessionStorage.getItem('product_info_price');
+		$scope.id= localStorage.getItem('product_info_id');
+		$scope.desc= localStorage.getItem('product_info_desc');
+		$scope.img= "img/"+ localStorage.getItem('product_info_img')+".jpg";
+		$scope.name= localStorage.getItem('product_info_name');
+		$scope.price= localStorage.getItem('product_info_price');
 	});
 
 
