@@ -8,3 +8,23 @@
 .header-item a {
     color: #333 !important;
 }
+
+
+ textarea{
+    padding-top: 10px;
+}
+
+
+.button.button-assertive {
+    border-color: transparent;
+    background-color: transparent;
+    color: #ddd;
+}
+
+.button.button-stable.button-clear {
+    border-color: transparent;
+    background: none;
+    box-shadow: none;
+    color: #333;
+    font-size: 14px;
+}

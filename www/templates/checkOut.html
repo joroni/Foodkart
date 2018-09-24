@@ -1,5 +1,6 @@
 <ion-view title="Check Out">
     <ion-content padding="'true'" class="has-header">
+        <h2 style="text-align:center; margin-top:40px; margin-bottom:20px">Customer Details</h2>
 		<div ng-show="loggedin()" >
 			<div class="button-bar">
 				<a href="#/page4" class="button button-balanced button-block ">Login</a>
@@ -11,11 +12,11 @@
 		</div>
         <form class="list">
             <label class="item item-input">
-                <span class="input-label" style="padding-right:75px">Name*</span>
+                <span class="input-label" style="padding-right:10px">Name*</span>
                 <textarea placeholder="" > {{" "+loggedin_name}}</textarea>
             </label>
             <label class="item item-input">
-                <span class="input-label" style="padding-right:10px" >Phone Number*</span>
+                <span class="input-label" style="padding-right:10px" >Phone*</span>
                 <textarea placeholder=""  > {{" "+loggedin_phone}}</textarea>
             </label>
             <label class="item item-input">

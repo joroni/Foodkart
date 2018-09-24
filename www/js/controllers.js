@@ -134,6 +134,10 @@ angular.module('app.controllers', [])
 
 })
 
+.controller('homeCtrl', function($scope) {
+	//$scope.total = 10; 
+})
+
 .controller('indexCtrl', function($scope,sharedCartService) {
 	//$scope.total = 10; 
 })
@@ -142,7 +146,7 @@ angular.module('app.controllers', [])
 		$scope.user = {};
 		
 		$scope.login = function() {
-			str="http://localhost/foodkart/api/user-details.php?e="+$scope.user.email+"&p="+$scope.user.password;
+			str="http://18.136.90.17/foodkart/api/user-details.php?e="+$scope.user.email+"&p="+$scope.user.password;
 			$http.get(str)
 			.success(function (response){
 				$scope.user_details = response.records;
@@ -178,7 +182,7 @@ angular.module('app.controllers', [])
 
 	$scope.signup=function(data){
 			
-			var link = 'http://localhost/foodkart/api/signup.php';
+			var link = 'http://18.136.90.17/foodkart/api/signup.php';
 			$http.post(link, {n : data.name, un : data.username, ps : data.password , ph: data.phone , add : data.address , pin : data.pincode })
 			.then(function (res){	
 				$scope.response = res.data.result; 

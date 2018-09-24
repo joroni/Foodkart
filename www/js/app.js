@@ -21,34 +21,45 @@ angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.services',
         StatusBar.styleDefault();
       }
       // set to either landscape
-      screen.orientation.lock('portrait');
+      // screen.orientation.lock('portrait');
 
       // allow user rotate
-     // screen.orientation.unlock();
+      // screen.orientation.unlock();
 
       /*window.addEventListener("orientationchange", function () {
         console.log(screen.orientation.type); // e.g. portrait*/
-      });
 
-      /*
-document.addEventListener("offline", onOffline, false);
-
-function onOffline() {
-   var stat = document.getElementById("stat");
-   stat.innerHTML("<div class='appstatus'>Offline</div>")
-}
+      if (!sessionStorage["loggedin_id"]) {
+        //
+       window.localtion = "/page4";
+      } else {
+        console.log("loggedin");
+      }
 
 
-document.addEventListener("online", onOnline, false);
 
-function onOnline() {
-   var stat = document.getElementById("stat");
-   stat.innerHTML("<div class='appstatus'>Online</div>")
-}
 
     });
 
-*/
+    /*
+    document.addEventListener("offline", onOffline, false);
+
+    function onOffline() {
+       var stat = document.getElementById("stat");
+       stat.innerHTML("<div class='appstatus'>Offline</div>")
+    }
+
+
+    document.addEventListener("online", onOnline, false);
+
+    function onOnline() {
+       var stat = document.getElementById("stat");
+       stat.innerHTML("<div class='appstatus'>Online</div>")
+    }
+
+        });
+
+    */
 
 
 

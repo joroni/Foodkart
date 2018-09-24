@@ -68,9 +68,9 @@ angular.module('app.services', [])
 }])
 
 .factory('sharedFilterService', [function(){
-//http://localhost/
+//http://18.136.90.17/
 	var obj = {};
-    obj.str = "http://localhost/foodkart/api/food_menu.php?till=";
+    obj.str = "http://18.136.90.17/foodkart/api/food_menu.php?till=";
 	obj.sort = "";
 	obj.search = "";
 	obj.category = "";
@@ -81,7 +81,7 @@ angular.module('app.services', [])
 	obj.getUrl=function(){
 		
 		obj.till=obj.till + 5;
-		obj.str="http://localhost/foodkart/api/food_menu.php?till="+obj.till; // pass the value to url
+		obj.str="http://18.136.90.17/foodkart/api/food_menu.php?till="+obj.till; // pass the value to url
 		
 		if(obj.sort!="" && obj.category!=""){
 			obj.str= obj.str+"&category="+obj.category+"&sort="+obj.sort;
