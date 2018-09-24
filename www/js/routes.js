@@ -14,7 +14,7 @@ angular.module('app.routes', [])
           controller: 'homeCtrl',
           resolve: {
             "check": function ($location) {
-              if (sessionStorage.getItem('loggedin_id')) {
+              if (localStorage.getItem('loggedin_id')) {
                 $location.path('/page0');
               } else {
                 $location.path('/page4');
@@ -31,7 +31,7 @@ angular.module('app.routes', [])
             controller: 'menuCtrl',
             resolve: {
               "check": function ($location) {
-                if (sessionStorage.getItem('loggedin_id')) {
+                if (localStorage.getItem('loggedin_id')) {
                   $location.path('/page1');
                 } else {
                   $location.path('/page4');
@@ -72,7 +72,7 @@ angular.module('app.routes', [])
             controller: 'loginCtrl',
             resolve: {
               "check": function ($location) {
-                if (sessionStorage.getItem('loggedin_id')) {
+                if (localStorage.getItem('loggedin_id')) {
                   $location.path('/page0');
                 } else {
                   $location.path('/page4');
@@ -131,7 +131,7 @@ angular.module('app.routes', [])
             controller: 'profileCtrl',
             resolve: {
               "check": function ($location) {
-                if (sessionStorage.getItem('loggedin_id')) {
+                if (localStorage.getItem('loggedin_id')) {
                   $location.path('/page9');
                 } else {
                   $location.path('/page4');
