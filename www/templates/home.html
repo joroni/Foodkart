@@ -1,7 +1,22 @@
 <ion-view title="Home">
-    
-    <ion-content padding="'false'" >
+    		
 
+   
+    <ion-content padding="'false'" >
+		<!-- --><div class="row">   
+<!--Automatically loops back from the begining -->
+<ion-slide-box auto-play ="true" does-continue="true" show-pager="true"  >
+
+    <!-- width: 100% height 50% to fill the slidder image according to the layout -->
+     <ion-slide class="swiper-slide swiper-slide-active" style="width:100%; display:block; height: 50%; "  ng-repeat="slide in slide_items" >
+        <div>
+           <img  ng-src="{{'img/'+ slide.p_image_id +'.jpg'}}"  ng-click="showProductInfo(slide.p_id,slide.p_description,slide.p_image_id,slide.p_name,slide.p_price)" >
+        </div>
+     </ion-slide >
+     
+  </ion-slide-box>
+  </div>
+  <div class="row">   
             <div class="list card">
 
                     <a href="#" class="item item-icon-left">
@@ -26,6 +41,7 @@
                   
                   </div>
 		
-      
+                </div>
+
       </ion-content>
 </ion-view>

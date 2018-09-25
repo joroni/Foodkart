@@ -135,7 +135,28 @@ angular.module('app.controllers', [])
 })
 
 .controller('homeCtrl', function($scope) {
-	//$scope.total = 10; 
+	//$scope.total = 10;
+	
+	$scope.slide_items=[    {"p_id":"1",
+						 "p_name":"New Chicken Maharaja",
+						 "p_description":"Product Description",
+						 "p_image_id":"slide_1",
+						 "p_price":"183"},
+						
+						{"p_id":"2",
+						"p_name":"Big Spicy Chicken Wrap",
+						"p_description":"Product Description",
+						"p_image_id":"slide_2",
+						"p_price":"171"},
+						
+						{"p_id":"3",
+						"p_name":"Big Spicy Paneer Wrap",
+						"p_description":"Product Description",
+						"p_image_id":"slide_3",
+						"p_price":"167"}
+				   ];
+					   
+		 
 })
 
 .controller('indexCtrl', function($scope,sharedCartService) {
